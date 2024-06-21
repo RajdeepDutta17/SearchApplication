@@ -17,12 +17,10 @@ function App() {
     try {
       const res = await axios({
         method: "GET",
-        url:
-          //   ? "https://search-app-api-qicn.onrender.com/api/v1/getEmployeeByQuery?searchQuery=" +
-          //     inputData
-          //   : "https://search-app-api-qicn.onrender.com/api/v1/getEmployee",
-          "http://localhost:8080/api/v1/getEmployeeByQuery?searchQuery=" +
-          inputData,
+        url: inputData
+          ? "https://search-app-api-qicn.onrender.com/api/v1/getEmployeeByQuery?searchQuery=" +
+            inputData
+          : "https://search-app-api-qicn.onrender.com/api/v1/getEmployee",
       });
 
       setData(res.data.data);
